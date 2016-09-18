@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data  class=".Custom">
+        <import type="com.abner.mydatabinding.Student"/>
+        <variable
+            name="stu"
+            type="Student"/>
+        <variable
+            name="click"
+            type="com.abner.mydatabinding.MyFragment"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text = "@{stu.name}"
+            android:onClick="@{click.onFragmentClick}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{String.valueOf(stu.age)}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{String.valueOf(stu.cardid)}"/>
+    </LinearLayout>
+</layout>

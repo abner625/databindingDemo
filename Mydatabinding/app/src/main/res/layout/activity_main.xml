@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data >
+        <import  type="com.abner.mydatabinding.Student"/>
+        <import type="java.util.HashMap"/>
+        <import type="java.util.ArrayList"/>
+        <import type="com.abner.mydatabinding.People"/>
+        <variable
+            name="stu"
+            type="Student"/>
+        <variable
+            name="name"
+            type="String"/>
+        <variable
+            name="age"
+            type="int"/>
+        <variable
+            name="cardid"
+            type="int"/>
+        <variable
+            name="error"
+            type="boolean"/>
+        <variable
+            name="array"
+            type="ArrayList&lt;String>"/>
+        <variable
+            name="map"
+            type="HashMap&lt;String,String>"/>
+        <variable
+            name="click"
+            type="com.abner.mydatabinding.OnItemClick"/>
+        <variable
+            name="people"
+            type="People"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.abner.mydatabinding.MainActivity">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{stu.name}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{String.valueOf(stu.age)}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{String.valueOf(stu.cardid)}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{array[0]}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{map[`name`]}"
+            android:onClick="@{click.onItemClick}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text='@{error ? `error` : `ok`}'/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text='@{name ?? `not null`}'/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{people.name}" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{people.isMan ?`Man`:`Woman`}" />
+    </LinearLayout>
+</layout>
